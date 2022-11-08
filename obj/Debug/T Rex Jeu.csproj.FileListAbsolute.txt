@@ -1,0 +1,11 @@
+C:\Users\thoma\source\repos\T Rex Jeu\T Rex Jeu\bin\Debug\T Rex Jeu.exe.config
+C:\Users\thoma\source\repos\T Rex Jeu\T Rex Jeu\bin\Debug\T Rex Jeu.exe
+C:\Users\thoma\source\repos\T Rex Jeu\T Rex Jeu\bin\Debug\T Rex Jeu.pdb
+C:\Users\thoma\source\repos\T Rex Jeu\T Rex Jeu\obj\Debug\T Rex Jeu.csproj.AssemblyReference.cache
+C:\Users\thoma\source\repos\T Rex Jeu\T Rex Jeu\obj\Debug\T Rex Jeu.csproj.SuggestedBindingRedirects.cache
+C:\Users\thoma\source\repos\T Rex Jeu\T Rex Jeu\obj\Debug\T_Rex_Jeu.Properties.Resources.resources
+C:\Users\thoma\source\repos\T Rex Jeu\T Rex Jeu\obj\Debug\T Rex Jeu.csproj.GenerateResource.cache
+C:\Users\thoma\source\repos\T Rex Jeu\T Rex Jeu\obj\Debug\T Rex Jeu.csproj.CoreCompileInputs.cache
+C:\Users\thoma\source\repos\T Rex Jeu\T Rex Jeu\obj\Debug\T Rex Jeu.exe
+C:\Users\thoma\source\repos\T Rex Jeu\T Rex Jeu\obj\Debug\T Rex Jeu.pdb
+C:\Users\thoma\source\repos\T Rex Jeu\T Rex Jeu\obj\Debug\T_Rex_Jeu.T_Rex_Jeu_Form.resources
