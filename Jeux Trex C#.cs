@@ -6,10 +6,10 @@ namespace T_Rex_Jeu
     public partial class T_Rex_Jeu_Form : Form
     {
         bool jumping = false;
-        int jumpSpeed = 12;
+        int jumpSpeed = 12;                                    //   Ce sont des variables gflobales que l'on va initialiser pour le jeu
         int force = 12;
-        int score = 0;
-        int obstacleSpeed = 10;
+        int score = 0;                                          //  par exemple la vitesse des obstacles les mots afficher lors de la mort         
+        int obstacleSpeed = 10;                                 // la génération aléatoire des obstacles
         Random rand = new Random();
         int position;
         bool isGameOver = false;
@@ -33,7 +33,7 @@ namespace T_Rex_Jeu
         {
             trex.Top += jumpSpeed;
 
-            txtScore.Text = "Score " + score;
+            txtScore.Text = "Score " + score;                                     // Texte permettant d'afficher des paramètres comme le texte la gestion de vitesse et autre
             txtPause.Text = "Pause " + nbPause;
             txtRunningSpeed.Text = "RunningSpeed " + obstacleSpeed;
             Dead.Text = "Dead " + isDead;
@@ -64,9 +64,9 @@ namespace T_Rex_Jeu
                  if (x is PictureBox && (string)x.Tag == "obstacle")
          
                 {
-                    if (x.Bounds.IntersectsWith(trex.Bounds))
+                    if (x.Bounds.IntersectsWith(trex.Bounds))                               
                     {
-                        GameReset();
+                        GameReset();                                    // fonction permettantb de reinitialiser le jeux au contact d'un obstacle
                     }
                     x.BringToFront();
                 }
@@ -84,11 +84,11 @@ namespace T_Rex_Jeu
 
                         if (x.Left < -100)
                         {
-                            x.Left = this.ClientSize.Width + rand.Next(200, 500) + (x.Width * 15);
+                            x.Left = this.ClientSize.Width + rand.Next(200, 500) + (x.Width * 15);               // on determine la largfeur du formuulaire de la picturebox
 
                         }
 
-                        if (x.Left<=252 && (trex.Top+trex.Height) >= x.Top)
+                        if (x.Left<=252 && (trex.Top+trex.Height) >= x.Top)                                      // lorsque l'on meurt il affiche un message vrai et quand on est en vie un message faux
                         {
                             isDead = true;
                         }
@@ -104,13 +104,14 @@ namespace T_Rex_Jeu
 
         private void keyisdown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space && jumping == false)
-            {
+            if (e.KeyCode == Keys.Space && jumping == false)      // on defini espace pour que le Trex saute lorsque que l'on appui sur la touche 
+            {                                                     // on veut pouvoir sauter qu'une seule fois pour qu'il puisse y avoir un effet de gravite et eviter ded suater à lo'infini
+
                 jumping = true;
             }
             if (e.KeyCode == Keys.S)
             {
-                if (nbPause < MaxPause)
+                if (nbPause < MaxPause)                            // on permet de pouvoir mettre pause sur kle jeu_ q'un certain nombre de fois
                 {
                     if(isStarted) nbPause++;
                     isStarted = !isStarted;
@@ -138,7 +139,7 @@ namespace T_Rex_Jeu
                 jumping = false;
             }
 
-            if (e.KeyCode == Keys.R)// && isGameOver == true)
+            if (e.KeyCode == Keys.R)// && isGameOver == true)             cette partie permet de pouvoir recommencer le jeu lorsque l'on appui sur R reset
             {
                 GameReset();
             }
@@ -148,25 +149,25 @@ namespace T_Rex_Jeu
 
         private void GameReset()
         {
-            force = 12;
+            force = 12;                                          
             jumpSpeed = 0;
-            jumping = false;
+            jumping = false;                             
             score = 0;
-            obstacleSpeed = 10;
-            txtScore.Text = "Score: " + score;
+            obstacleSpeed = 10;                                         // vitesse des obstacles 
+            txtScore.Text = "Score: " + score;                          // affichage du score
             trex.Image = Properties.Resources.running;
             isGameOver = false;
             trex.Top = valInit;
 
             foreach (Control x in this.Controls)
             {
-                if (x is PictureBox && x.Name.Contains("obstacle"))
+                if (x is PictureBox && x.Name.Contains("obstacle"))         // on prend l'entier de position que l'on a defini avant 
                 {
                     if (x.Name.Contains("obstacle1")) x.Left = 453;
                     if (x.Name.Contains("obstacle2")) x.Left = 648;
-                    // position = this.ClientSize.Width + rand.Next(500, 800) + (x.Width * 10);
+                                                                            // position = this.ClientSize.Width + rand.Next(500, 800) + (x.Width * 10);
 
-                    // x.Left = position;
+                                                                           // x.Left = position;
                 }
 
 
